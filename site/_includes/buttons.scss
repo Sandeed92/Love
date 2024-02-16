@@ -1,0 +1,46 @@
+button,
+.button,
+.view-card input[type=submit] {
+  padding: .5em 1em .6em;
+  display: inline-block;
+  background-color: var(--color-teal-T500);
+  border-radius: 4px;
+  font-family: var(--font-secondary);
+  font-size: 100%;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-teal-T900);
+  text-decoration: none;
+  border: none;
+  transition: background-color 200ms;
+  white-space: nowrap;
+}
+
+button:hover,
+.button:hover,
+.view-card input[type=submit]:hover {
+  background-color: var(--color-teal-T200);
+  cursor: pointer;
+}
+
+input[type=submit]:disabled,
+input[type=submit]:disabled:hover,
+button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(100%);
+}
+
+.js-focus-visible button.focus-visible,
+.js-focus-visible .button.focus-visible {
+  box-shadow: 0 0 1px 4px var(--color-teal-T600);
+}
+
+.button.blue {
+  background-color: var(--color-blue-B500);
+  color: var(--color-blue-B050);
+}
+
+.button.blue:hover {
+  background-color: var(--color-blue-B700);
+  color: var(--color-blue-B050);
+}

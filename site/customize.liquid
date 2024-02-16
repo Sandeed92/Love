@@ -1,0 +1,62 @@
+---
+layout: layouts/base.11ty.js
+pageClass: view-card view-customize
+bannerTitle: Make it yours
+pagination: 
+  data: cards
+  alias: card
+  size: 1
+permalink: "/customize/{{card.image}}/index.html"
+scripts: ["init.js","customize.js"]
+---
+
+
+  <main class="container">
+    <div class="content">
+      <section class="cta" id="customize-cta">
+      </section>
+      <div class="card">
+        <img src="/img/valentines/{{card.image}}.svg"  alt="{{card.title}}" class="valentine" />
+        <div class="recipient-details">
+          <img class="user-avatar recipient-user-avatar" src="" alt="" />
+          <a href="" class="user-handle recipient-user-handle" target="_blank"></a>
+        </div>
+        <div class="sender-details">
+          <img class="user-avatar logged-in-user-avatar" src="" alt="" />
+          <a href="" class="user-handle logged-in-user-handle" target="_blank"></a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+  <template id="logged-in">
+    <div class="search-form">
+      <label for="search">Enter a GitHub org or username</label>
+      <span class="username-prefix">@</span>
+      <input type="text" name="search" id="search-recipient">
+    </div>
+    <div class="button-group">
+      <div class="recipient-util">
+        <small class="recipient-success"></small>
+        <a href="#" class="button add-recipient">Add recipient</a>
+      </div>
+      <form action="/create" method="post" name="new-valentine" id="newValentine">
+        <input type="hidden" id="senderName" name="senderName" value="" />
+        <input type="hidden" id="senderAvatar" name="senderAvatar" value="" />
+        <input type="hidden" id="recipientName" name="recipientName" value="" />
+        <input type="hidden" id="recipientFullName" name="recipientFullName" value="" />
+        <input type="hidden" id="recipientAvatar" name="recipientAvatar" value="" />
+        <input type="hidden" id="sponsorable" name="sponsorable" value="" />
+        <input type="hidden" id="cardVariant" name="cardVariant"  value="{{card.image}}.svg" />
+        <input type="hidden" id="recipientCanBeSponsored" name="recipientCanBeSponsored" value="">
+        <input type="submit" class="button" id="ship-it" disabled value="Ship it!" />
+       </form>
+     </div>
+  </template>
+  <template id="logged-out">
+    <p>Choose a recipient and add your signature by connecting to GitHub</p>
+    <a href="/auth/login" class="button gh-login">Log in with GitHub</a>
+  </template>
+

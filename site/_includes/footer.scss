@@ -1,0 +1,64 @@
+.footer-main {
+	margin-top: auto;
+	text-align: center;
+}
+
+.footer-main .content {
+	padding: 3em 0 2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer-main h3 {
+	display: flex;
+	align-items: center;
+	gap: .4em;
+}
+
+.footer-main p {
+	max-width: 460px;
+	margin: 1em auto;
+	font-size: 110%;
+}
+
+.footer-main a:hover {
+	color: var(--color-teal-T600);
+	text-decoration: none;
+}
+
+.footer-main .netlify-logo {
+  width: 2.5rem;
+	margin-top: 1em;
+	display: inline-block;
+}
+
+.landing .footer-main {
+	margin-top: 0;
+	padding-top: 5em;
+}
+
+.footer-list {
+	list-style: none;
+	margin-block-start: 2rem;
+	display: flex;
+	text-align: left;
+	width: 100%;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.footer-list li:first-of-type {
+	flex: 1;
+}
+	
+@media (max-width: 575px) {
+	.footer-list {
+		flex-direction: column;
+	}
+}
+
+.footer-list .footer-copyright {
+	margin: 0;
+}
